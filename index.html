@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keypress Project</title>
+<style>
+  body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  p{
+    border: 2px solid black;
+    font-size:larger;
+    padding: 5px;
+    
+  }
+</style>
+</head>
+<body>
+  <h1>Press a Key!</h1>
+  <p id="key-display"></p>
+  <script>
+    // Function to handle keypress events
+    function handleKeyPress(event) {
+      const key = event.key;
+      const keyCode = event.keyCode;
+      const keyDisplay = document.querySelector('#key-display');
+      
+      // Display the pressed key and its code
+      keyDisplay.textContent = `Key: ${key} | Code: ${keyCode}`;
+    }
+    
+    // Add a listener for keypress events
+    document.addEventListener('keydown', handleKeyPress);
+  </script>
+</body>
+</html>
